@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@using CurrencyAppTestV.Models
+@model EURModel
+
+<link rel="stylesheet" href="~/css/EUR-style.css" />
+<div class="text-center">
+    <div class="form-div">
+        <form method="post">
+
+            <div class="row">
+                <div class="row" id="first-block">
+                    <div id="radio-list">
+                        <input name="radio_info" type="radio" value="EURtoAZE" checked />
+                        <span>EUR to AZE</span> <br />
+                        <input name="radio_info" type="radio" value="AZEtoEUR" />
+                        <span>AZE to EUR</span> <br />
+
+                    </div>
+                    <div id="input-place">
+                        <input type="number" name="given_number" /><br />
+                    </div>
+                    <div id="submit-btn">
+                        <p>
+                            <input type="submit" value="Send" />
+                        </p>
+                    </div>
+                </div>
+                <div class="result">
+                    <div class="result-items">
+                        @{
+                                decimal result;
+                                if (Model.ConvertedToAZE != 0)
+                                {
+                                    result = Model.ConvertedToAZE;
+                                }
+                                else
+                                {
+                                    result = Model.ConvertedToEUR;
+                                }
+                          }
+
+
+
+                        <h1>result</h1>
+                        <p>exchange rate of EUR: @Model.EUR</p>
+                        <p>result : @result</p>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+

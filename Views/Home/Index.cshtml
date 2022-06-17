@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+
+
+<link rel="stylesheet" href="~/css/IndexStyle.css">
+<div class="row container" id="main">
+    <div class="first">
+        <div class="USD-div">
+            <a asp-controller="Currency" asp-action="USD_View" class="USD-btn">USD</a>
+        </div>
+
+    </div>
+    <div class="second">
+        <div class="EUR-div">
+            <a asp-controller="Currency" asp-action="EUR_View" class="EUR-btn">EUR</a>
+        </div>
+    </div>
+</div>

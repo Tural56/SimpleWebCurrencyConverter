@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+@using CurrencyAppTestV.Models
+@model USDModel
+
+<link rel="stylesheet" href="~/css/USD-style.css" />
+<div class="text-center">
+    <div class="form-div">
+        <form method="post">
+
+            <div class="row">
+                <div class="row" id="first-block">
+                    <div id="radio-list">
+                        <input name="radio_info" type="radio" value="USDtoAZE" checked />
+                        <span>USD to AZE</span> <br />
+                        <input name="radio_info" type="radio" value="AZEtoUSD" />
+                        <span>AZE to USD</span> <br />
+
+                    </div>
+                    <div id="input-place">
+                        <input type="number" name="given_number" /><br />
+                    </div>
+                    <div id="submit-btn">
+                        <p>
+                            <input type="submit" value="Send" />
+                        </p>
+                    </div>
+                </div>
+                <div class="result">
+                    <div class="result-items">
+                        @{
+                            decimal result;
+                            if (Model.ConvertedToAZE != 0)
+                            {
+                                result = Model.ConvertedToAZE;
+                            }
+                            else
+                            {
+                                result = Model.ConvertedToUSD;
+                            }
+                        }
+
+
+
+                        <h1>result</h1>
+                        <p>exchange rate of USD: @Model.USD</p>
+                        <p>result : @result</p>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
